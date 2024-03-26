@@ -21,7 +21,7 @@
     "totalPages": 328,
     "rating": 4.7,
     "categories": "Science Fiction",
-    "tags": ["Dystopian", "Political", "Surveillance"],
+    "tags": ["Dystopian", "Political", "Surveil"],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
   },
@@ -47,7 +47,7 @@
     "totalPages": 180,
     "rating": 4.4,
     "categories": "Fiction",
-    "tags": ["Classic", "American Literature", "Wealth"],
+    "tags": ["Classic", "Literature", "Wealth"],
     "publisher": "Charles Scribner s Sons",
     "yearOfPublishing": 1925
   },
@@ -73,7 +73,7 @@
     "totalPages": 309,
     "rating": 4.8,
     "categories": "Fantasy",
-    "tags": ["Magic", "Children's Literature", "Wizardry"],
+    "tags": ["Magic", "Children's Literature"],
     "publisher": "Bloomsbury Publishing",
     "yearOfPublishing": 1997
     },
@@ -99,7 +99,7 @@
     "totalPages": 590,
     "rating": 4.1,
     "categories": "Mystery",
-    "tags": ["Conspiracy", "Adventure", "Codebreaking"],
+    "tags": ["Conspiracy", "Adventure"],
     "publisher": "Doubleday",
     "yearOfPublishing": 2003
     },
@@ -112,7 +112,7 @@
     "totalPages": 1178,
     "rating": 4.9,
     "categories": "Fantasy",
-    "tags": ["Epic", "High Fantasy", "Adventure"],
+    "tags": ["Epic", "Fantasy", "Adventure"],
     "publisher": "George Allen & Unwin",
     "yearOfPublishing": 1954
     },
@@ -125,7 +125,7 @@
     "totalPages": 374,
     "rating": 4.5,
     "categories": "Young Adult",
-    "tags": ["Dystopian", "Adventure", "Survival"],
+    "tags": ["Dystopian", "Adventure"],
     "publisher": "Scholastic Press",
     "yearOfPublishing": 2008
     }

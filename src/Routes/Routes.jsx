@@ -2,13 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import ListedBook from "../Pages/ListedBook";
 import PagesToRead from "../Pages/PagesToRead";
-import Recommendations from "../Pages/Recommendations";
 import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import BookDetails from "../Components/BookDetails";
 import ReadedBook from "../Components/ReadedBook";
 import WishList from "../Components/WishList";
 import Contact from "../Pages/Contact";
+import BlogNews from "../Pages/BlogNews";
 
 export const router = createBrowserRouter([
     {
@@ -45,8 +45,9 @@ export const router = createBrowserRouter([
             element : <PagesToRead></PagesToRead>
         },
         {
-            path:'/recommendations',
-            element : <Recommendations></Recommendations>
+            path:'/blogNews',
+            element : <BlogNews></BlogNews>,
+            loader: () => fetch(`/newsblog.json`)
         },
         {
             path:'/contact',
