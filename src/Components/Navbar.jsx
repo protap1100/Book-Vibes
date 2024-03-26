@@ -47,7 +47,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/ourShop">Our Shop</NavLink>
+              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/contact">Contact Us</NavLink>
           </li>
           </ul>
         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/ourShop">Our Shop</NavLink>
+              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/contact">Contact Us</NavLink>
           </li>
         </ul>
       </div>

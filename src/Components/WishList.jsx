@@ -21,14 +21,14 @@ const WishList = () => {
         <div className="mt-5 flex flex-col gap-10">
            {
             wishListBooks.map((showBooks,index)=> 
-                <div className="flex gap-10 border p-5 bg-green-50 border-gray-500 rounded-xl" key={index}>
+                <div className="flex flex-col lg:flex-row gap-10 border p-5 bg-green-50 border-gray-500 rounded-xl" key={index}>
                     <div className="flex-grow-0 bg-gray-200 rounded-2xl p-10">
                         <img src={showBooks.image} alt="" />
                     </div>
                     <div className="flex-grow-1">
                         <h1 className="text-3xl font-bold ">{showBooks.bookName} </h1>
                         <h1 className="mt-5 text-xl font-semibold">By : {showBooks.author} </h1>
-                        <div className="mt-5 gap-10 flex">
+                        <div className="mt-5 gap-10 flex flex-col lg:flex-row">
                             <h1 className="font-bold">Tags:</h1>
                             {
                                 showBooks.tags.map((tag,index) => <h1 key={index} className="font-bold text-green-600">#{tag}</h1>)
@@ -47,7 +47,7 @@ const WishList = () => {
                             </div>
                         </div>
                         <div className="my-5 border border-gray-500 "></div>
-                        <div className="flex gap-4">
+                        <div className="flex flex-col lg:flex-row gap-4">
                             <button className="btn bg-blue-200 text-blue-600 rounded-3xl">Category: {showBooks.categories}</button>
                             <button className="btn bg-orange-100 text-orange-500 rounded-3xl">Rating: {showBooks.rating}</button>
                             <button className="btn bg-[#23BE0A] text-white rounded-3xl">View Details</button>

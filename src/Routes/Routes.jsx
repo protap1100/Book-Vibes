@@ -3,12 +3,12 @@ import MainLayout from "../Layout/MainLayout";
 import ListedBook from "../Pages/ListedBook";
 import PagesToRead from "../Pages/PagesToRead";
 import Recommendations from "../Pages/Recommendations";
-import OurShop from "../Pages/OurShop";
 import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import BookDetails from "../Components/BookDetails";
 import ReadedBook from "../Components/ReadedBook";
 import WishList from "../Components/WishList";
+import Contact from "../Pages/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -49,8 +49,8 @@ export const router = createBrowserRouter([
             element : <Recommendations></Recommendations>
         },
         {
-            path:'/ourShop',
-            element : <OurShop></OurShop>
+            path:'/contact',
+            element : <Contact></Contact>
         },
         
       ]
