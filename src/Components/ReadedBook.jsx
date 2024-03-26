@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { useLoaderData } from "react-router-dom";
 import { getStoredBooks } from "../LocalStorage/LocalStorage";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
@@ -11,11 +10,11 @@ const ReadedBook = () => {
 
     useEffect(() =>{
         const storedBooksId = getStoredBooks();
-        console.log(storedBooksId)
+        // console.log(storedBooksId)
         SetDisplayBooks(storedBooksId)
     }, []);
 
-    console.log(displayBooks);
+    // console.log(displayBooks);
  
 
     return (

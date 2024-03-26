@@ -15,7 +15,6 @@ export const saveBooks = book => {
     }
 }
 
-
 export const getWishlistBooks = () => {   
     const storedBooks = localStorage.getItem('wishList');
     if(storedBooks){

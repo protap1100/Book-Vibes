@@ -21,7 +21,7 @@ const WishList = () => {
         <div className="mt-5 flex flex-col gap-10">
            {
             wishListBooks.map((showBooks,index)=> 
-                <div className="flex gap-10 border p-5 border-gray-500 rounded-xl" key={index}>
+                <div className="flex gap-10 border p-5 bg-green-50 border-gray-500 rounded-xl" key={index}>
                     <div className="flex-grow-0 bg-gray-200 rounded-2xl p-10">
                         <img src={showBooks.image} alt="" />
                     </div>

@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
+import { getStoredBooks } from "../LocalStorage/LocalStorage";
 
 const ListedBook = () => {
 
     const [tab,setTab] = useState(0);
 
+    const [displayBooks, setDisplayBooks] =useState([]);
+
+    useEffect(() =>{
+        const storedBooksId = getStoredBooks();
+        setDisplayBooks(storedBooksId)
+    }, []);
+
+    // console.log(displayBooks);
+    // console.log(displayBooks[0].rating)
+
+    const handleSortBook = (filter) => {
+        if(filter === "All"){
+            displayBooks
+        }else if (filter === "Rating"){
+            console.log('hello world')
+        }
+    }
 
     return (
         <div>
@@ -12,7 +31,15 @@ const ListedBook = () => {
                 <h1 className="text-3xl font-bold">Books</h1>
             </div>
             <div className="py-10 text-center">
-                <h1 className="text-2xl font-bold ">Sort By</h1>
+                <details className="dropdown">
+                <summary className="m-1 btn font-medium px-5 hover:bg-blue-300 bg-[#23BE0A] text-white">Sort By <span> <IoIosArrowDown/> </span>  </summary>
+                <ul className="p-5 shadow menu dropdown-content items-center bg-base-100 rounded-box">
+                    <li onClick={() => handleSortBook('All')}><a>All</a></li>
+                    <li onClick={() => handleSortBook('Rating')}><a>Rating</a></li>
+                    <li><a>Pages</a></li>
+                    <li><a>Year</a></li>
+                </ul>
+                </details>
             </div>
            <div className="flex items-start -mx-4 overflow-x-auto overflow-y-hidden  flex-nowrap border-b border-black">
                 <Link to='' onClick={() => setTab(0)} rel="noopener noreferrer" href="#" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b ${tab=== 0 ? "border border-b-0 rounded-t-lg dark:border-gray-600 dark:text-gray-900" : "" }`}>

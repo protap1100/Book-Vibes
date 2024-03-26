@@ -18,22 +18,30 @@ const BookDetails = () => {
         const storedBooks = getStoredBooks();
         const isBookAlreadyAdded = storedBooks.find(savedBook => savedBook.bookId === book.bookId);
         if (isBookAlreadyAdded) {
-            toast.error("You Have Already Added This Book");
+            toast.error("You Have Already Readed This Books");
         } else {
             saveBooks(book);
-            toast.success('You Have Added This Book Successfully');
+            toast.success('You Have Added This Book To Your Readed Book List Successfully');
         }
     }
 
     const handleWishListBooks = () => {
         const storedBooks = getWishlistBooks();
         const isBookAlreadyAdded = storedBooks.find(savedBook => savedBook.bookId === book.bookId);
-        if (isBookAlreadyAdded) {
-            toast.error("You Have Already Added This Book");
-        } else {
-            saveWishlistBooks(book);
-            toast.success('You Have Added This Book Successfully');
+        const storedBooks2 = getStoredBooks();
+        const isBookAlreadyAdded2 = storedBooks2.find(savedBook => savedBook.bookId === book.bookId);
+
+        if(isBookAlreadyAdded2){
+                 toast.warn('You Already Readed This Book Can t Add this to Wishlist ')
+        }else{
+            if (isBookAlreadyAdded) {
+                toast.error("This Book Already Exist in Your Wishlist");
+            } else {
+                saveWishlistBooks(book);
+                toast.success('You Have Added This Book To Your Wishlist Successfully');
+            }
         }
+ 
     }
     
 
