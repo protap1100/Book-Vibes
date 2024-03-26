@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import {saveBooks} from '../LocalStorage/LocalStorage';
+import {saveBooks,getStoredBooks, getWishlistBooks, saveWishlistBooks} from '../LocalStorage/LocalStorage';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,9 +15,28 @@ const BookDetails = () => {
     const {image,bookName,categories, tags,totalPages,publisher,yearOfPublishing,rating,author,review} = book;
 
     const handleAddBooks = () =>{
-        saveBooks(idInt);
-        toast('You Have Added Book Successfully');
+        const storedBooks = getStoredBooks();
+        const isBookAlreadyAdded = storedBooks.find(savedBook => savedBook.bookId === book.bookId);
+        if (isBookAlreadyAdded) {
+            toast.error("You Have Already Added This Book");
+        } else {
+            saveBooks(book);
+            toast.success('You Have Added This Book Successfully');
+        }
     }
+
+    const handleWishListBooks = () => {
+        const storedBooks = getWishlistBooks();
+        const isBookAlreadyAdded = storedBooks.find(savedBook => savedBook.bookId === book.bookId);
+        if (isBookAlreadyAdded) {
+            toast.error("You Have Already Added This Book");
+        } else {
+            saveWishlistBooks(book);
+            toast.success('You Have Added This Book Successfully');
+        }
+    }
+    
+
 
     return (
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 ">
@@ -63,8 +82,8 @@ const BookDetails = () => {
                     </table>
                 </div>
                 <div className="mt-10 flex gap-5">
-                    <button className="btn font-extrabold border-2 border-gray-400" >Read</button>
-                    <button className="btn bg-[#50B1C9] font-bold text-white" onClick={handleAddBooks} >Wishlist</button>
+                    <button className="btn font-extrabold border-2 border-gray-400" onClick={handleAddBooks}>Read</button>
+                    <button className="btn bg-[#50B1C9] font-bold text-white" onClick={handleWishListBooks}  >Wishlist</button>
                 </div>
             </div> 
             <ToastContainer></ToastContainer>

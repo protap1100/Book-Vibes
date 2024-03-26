@@ -19,12 +19,12 @@ export const router = createBrowserRouter([
         {
             index : true,
             element :<Home></Home>,
-            loader: () => fetch('Books.json')
+            loader: () => fetch('./Books.json')
         },
         {
             path:'/book/:id',
             element:<BookDetails></BookDetails>,
-            loader: () => fetch(`Books.json`)
+            loader: () => fetch(`./Books.json`)
         },
         {
             path: '/listedBooks',
@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
             children: [
                 {
                     index:true,
-                    element: <ReadedBook></ReadedBook>
+                    element: <ReadedBook></ReadedBook>,
                 },
                 {
                     path:'wishList',
