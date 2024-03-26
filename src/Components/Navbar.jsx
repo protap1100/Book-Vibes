@@ -25,30 +25,20 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-                     <li>
             <NavLink
               className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : "text-black"} to="/"
+              isActive ? "text-green-600 rounded-xl flex  items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/"
             >
               Home
             </NavLink>
-          </li>
-          <li>
             <NavLink  className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/listedBooks" >Listed Books</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 rounded-xl flex  items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/listedBooks" >Listed Books</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/pagesToRead">Pages To Read</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 rounded-xl flex  items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/pagesToRead">Pages To Read</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/recommendations">Recommendations</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 rounded-xl flex  items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/recommendations">Recommendations</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/contact">Contact Us</NavLink>
-          </li>
+              isActive ? "text-green-600 rounded-xl flex  items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/contact">Contact Us</NavLink>
           </ul>
         </div>
         <NavLink to="/" className="btn btn-ghost text bold text-2xl">
@@ -57,30 +47,20 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal flex  gap-3 px-1">
-          <li>
             <NavLink
-              className={({ isActive, isPending }) =>
-              isPending? "bg-blue-600" :  isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/"
+              className={({ isActive, }) =>
+              isActive ? "text-green-600 rounded-xl flex justify-center items-center p-2 font-extrabold border-2 border-green-600" : "p-2 text-lg"} to="/"
             >
               Home
             </NavLink>
-          </li>
-          <li>
             <NavLink  className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/listedBooks" >Listed Books</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 font-extrabold rounded-xl flex justify-center items-center p-2 border-2 border-green-600" : "p-2 text-lg"} to="/listedBooks" >Listed Books</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/pagesToRead">Pages To Read</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 font-extrabold rounded-xl flex justify-center items-center p-2 border-2 border-green-600" : "p-2 text-lg"} to="/pagesToRead">Pages To Read</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/recommendations">Recommendations</NavLink>
-          </li>
-          <li>
+              isActive ? "text-green-600 font-extrabold rounded-xl flex justify-center items-center p-2 border-2 border-green-600" : "p-2 text-lg"} to="/recommendations">Recommendations</NavLink>
             <NavLink className={({ isActive }) =>
-              isActive ? "text-green-600 font-extrabold border-2 border-green-600" : ""} to="/contact">Contact Us</NavLink>
-          </li>
+              isActive ? "text-green-600 font-extrabold rounded-xl flex justify-center items-center p-2 border-2 border-green-600" : "p-2 text-lg"} to="/contact">Contact Us</NavLink>
         </ul>
       </div>
       <div className="navbar-end flex gap-3">
