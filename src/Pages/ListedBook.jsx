@@ -4,9 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { getStoredBooks } from "../LocalStorage/LocalStorage";
 
 const ListedBook = () => {
-
     const [tab,setTab] = useState(0);
-
     const [displayBooks, setDisplayBooks] =useState([]);
 
     useEffect(() =>{
@@ -14,15 +12,21 @@ const ListedBook = () => {
         setDisplayBooks(storedBooksId)
     }, []);
 
-    // console.log(displayBooks);
-    // console.log(displayBooks[0].rating)
-
     const handleSortBook = (filter) => {
         if(filter === "All"){
-            displayBooks
+            setDisplayBooks(displayBooks)
         }else if (filter === "Rating"){
-            console.log('hello world')
+            const sorting = displayBooks.sort((a, b) => b.rating - a.rating);
+            setDisplayBooks(sorting)
+        }else if (filter === "Pages"){
+            const sorting = displayBooks.sort((a, b) => b.totalPages - a.totalPages);
+            setDisplayBooks(sorting)
+        }else if (filter === "Year"){
+            const sorting = displayBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+            console.log(sorting);
         }
+
+        setDisplayBooks()
     }
 
     return (
@@ -36,8 +40,8 @@ const ListedBook = () => {
                 <ul className="p-5 shadow menu dropdown-content items-center bg-base-100 rounded-box">
                     <li onClick={() => handleSortBook('All')}><a>All</a></li>
                     <li onClick={() => handleSortBook('Rating')}><a>Rating</a></li>
-                    <li><a>Pages</a></li>
-                    <li><a>Year</a></li>
+                    <li onClick={() => handleSortBook('Pages')} ><a>Pages</a></li>
+                    <li onClick={() => handleSortBook('Year')}><a>Year</a></li>
                 </ul>
                 </details>
             </div>

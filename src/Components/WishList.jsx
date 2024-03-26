@@ -11,11 +11,11 @@ const WishList = () => {
 
     useEffect(() =>{
         const storedBooksId = getWishlistBooks();
-        console.log(storedBooksId)
+        // console.log(storedBooksId)
         setWishListBooks(storedBooksId)
     }, []);
 
-    console.log(wishListBooks);
+    // console.log(wishListBooks);
 
     return (
         <div className="mt-5 flex flex-col gap-10">

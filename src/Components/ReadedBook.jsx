@@ -3,21 +3,42 @@ import { getStoredBooks } from "../LocalStorage/LocalStorage";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 const ReadedBook = () => {
-
-    const [displayBooks, SetDisplayBooks] =useState([]);
-
+    const [displayBooks, setDisplayBooks] =useState([]);
     useEffect(() =>{
         const storedBooksId = getStoredBooks();
-        SetDisplayBooks(storedBooksId)
+        setDisplayBooks(storedBooksId)
     }, []);
 
-    // console.log(displayBooks);
- 
+    const handleSortBook = (filter) => {
+        let sortedBooks = [...displayBooks];
+        if (filter === "Rating") {
+            sortedBooks.sort((a, b) => b.rating - a.rating);
+        } else if (filter === "Pages") {
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
+        } else if (filter === "Year") {
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+        }
+
+        setDisplayBooks(sortedBooks);
+    }
 
     return (
         <div className="mt-5 flex flex-col gap-10">
+                <div className="py-10 text-center">
+                    <details className="dropdown">
+                        <summary className="m-1 btn font-medium px-5 hover:bg-blue-300 bg-[#23BE0A] text-white">Sort By <span> <IoIosArrowDown/> </span>  </summary>
+                        <ul className="p-5 shadow menu dropdown-content items-center bg-base-100 rounded-box">
+                            <li onClick={() => handleSortBook('All')}><a>All</a></li>
+                            <li onClick={() => handleSortBook('Rating')}><a>Rating</a></li>
+                            <li onClick={() => handleSortBook('Pages')} ><a>Pages</a></li>
+                            <li onClick={() => handleSortBook('Year')}><a>Year</a></li>
+                        </ul>
+                    </details>
+                </div>
+
            {
             displayBooks.map((showBooks,index)=> 
                 <div className="flex flex-col lg:flex-row gap-10 border p-5 border-gray-500 rounded-xl" key={index}>
