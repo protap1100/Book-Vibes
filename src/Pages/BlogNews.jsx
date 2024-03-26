@@ -13,9 +13,13 @@ const BlogNews = () => {
     return (
         <div>
              <section className=" text-gray-100">
+                <div className="py-5 bg-green-500 rounded-2xl text-center">
+                    <h1 className="text-3xl font-bold">Latest News</h1>
+                    <h1>Read Latest News And Blog That Writeen By Famous Author</h1>
+                </div>
                 <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
                     <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 rounded-xl bg-green-600">
-                        <img src="https://source.unsplash.com/random/480x360" alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 " />
+                        <img src={newsBlog[0].image} alt="" className="object-cover w-[600px] h-64 rounded sm:h-96 lg:col-span-7 " />
                         <div className="p-6 space-y-2 lg:col-span-5">
                             <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{newsBlog[0].title}</h3>
                             <span className="text-xs text-gray-50">{newsBlog[0].date}</span>
