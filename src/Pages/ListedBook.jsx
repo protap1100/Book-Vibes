@@ -13,20 +13,18 @@ const ListedBook = () => {
     }, []);
 
     const handleSortBook = (filter) => {
-        if(filter === "All"){
-            setDisplayBooks(displayBooks)
-        }else if (filter === "Rating"){
-            const sorting = displayBooks.sort((a, b) => b.rating - a.rating);
-            setDisplayBooks(sorting)
-        }else if (filter === "Pages"){
-            const sorting = displayBooks.sort((a, b) => b.totalPages - a.totalPages);
-            setDisplayBooks(sorting)
-        }else if (filter === "Year"){
-            const sorting = displayBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
-            console.log(sorting);
+        let sortedBooks = [...displayBooks];
+        if (filter === "Rating") {
+            sortedBooks.sort((a, b) => b.rating - a.rating);
+        } else if (filter === "Pages") {
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
+        } else if (filter === "Year") {
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+        }else{
+            setDisplayBooks(sortedBooks)
         }
 
-        setDisplayBooks()
+        setDisplayBooks(sortedBooks);
     }
 
     return (

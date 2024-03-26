@@ -48,10 +48,10 @@ const BookDetails = () => {
 
     return (
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 ">
-           <div className="bg-gray-200 rounded-3xl flex items-center justify-center">
-                <img className="w-1/2  h-full" src={image} alt="" />
+           <div className="bg-gray-200 rounded-3xl px-5 lg:px-0 flex items-center justify-center">
+                <img className="w-1/2 rounded-2xl  h-full" src={image} alt="" />
             </div>
-            <div>
+            <div className="px-5 lg:px-0">
                 <h1 className="text-4xl  font-extrabold" > {bookName}</h1>
                 <h1 className="text-2xl mt-5"> By,{author ? author : "Not Found"}</h1>
                 <div className="border my-5 border-gray-500"></div>

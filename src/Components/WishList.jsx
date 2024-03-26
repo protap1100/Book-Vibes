@@ -22,8 +22,8 @@ const WishList = () => {
            {
             wishListBooks.map((showBooks,index)=> 
                 <div className="flex flex-col lg:flex-row gap-10 border p-5 bg-green-50 border-gray-500 rounded-xl" key={index}>
-                    <div className="flex-grow-0 bg-gray-200 rounded-2xl p-10">
-                        <img src={showBooks.image} alt="" />
+                    <div className="flex-grow-0 bg-gray-200 rounded-2xl p-5">
+                        <img className="w-40 h-52" src={showBooks.image} alt="" />
                     </div>
                     <div className="flex-grow-1">
                         <h1 className="text-3xl font-bold ">{showBooks.bookName} </h1>
