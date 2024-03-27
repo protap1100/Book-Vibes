@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import {  useState,useEffect } from "react";
+import { Link,  } from "react-router-dom";
+import ReadedBook from "../Components/ReadedBook";
+import WishList from "../Components/WishList";
 import { IoIosArrowDown } from "react-icons/io";
 import { getStoredBooks } from "../LocalStorage/LocalStorage";
 
 const ListedBook = () => {
+    
     const [tab,setTab] = useState(0);
     const [displayBooks, setDisplayBooks] =useState([]);
 
@@ -23,7 +26,6 @@ const ListedBook = () => {
         }else{
             setDisplayBooks(sortedBooks)
         }
-
         setDisplayBooks(sortedBooks);
     }
 
@@ -36,14 +38,13 @@ const ListedBook = () => {
                 <details className="dropdown">
                 <summary className="m-1 btn font-medium px-5 hover:bg-blue-300 bg-[#23BE0A] text-white">Sort By <span> <IoIosArrowDown/> </span>  </summary>
                 <ul className="p-5 shadow menu dropdown-content items-center bg-base-100 rounded-box">
-                    <li onClick={() => handleSortBook('All')}><a>All</a></li>
                     <li onClick={() => handleSortBook('Rating')}><a>Rating</a></li>
                     <li onClick={() => handleSortBook('Pages')} ><a>Pages</a></li>
                     <li onClick={() => handleSortBook('Year')}><a>Year</a></li>
                 </ul>
                 </details>
             </div>
-           <div className="flex items-start -mx-4 overflow-x-auto overflow-y-hidden  flex-nowrap border-b border-black">
+           <div className="flex mt-5 items-start -mx-4 overflow-x-auto overflow-y-hidden  flex-nowrap border-b ">
                 <Link to='' onClick={() => setTab(0)} rel="noopener noreferrer" href="#" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b ${tab=== 0 ? "border border-b-0 rounded-t-lg dark:border-gray-600 dark:text-gray-900" : "" }`}>
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -60,9 +61,8 @@ const ListedBook = () => {
                     <span>Wished List</span>
                 </Link>
             </div>
-            <Outlet>
-
-            </Outlet>
+            {tab === 0 && <ReadedBook displayBooks={displayBooks} />}
+            {tab === 1 && <WishList />}
         </div>
     );
 };
