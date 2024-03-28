@@ -7,7 +7,7 @@ const Book = ({book}) => {
 
     const {bookId,image,tags,author,bookName,rating} = book;
     // console.log(bookId)
-    return (
+    return (  
         <Link to={`/book/${bookId}`}  className='border border-gray-300 rounded-2xl '>
             <div className='p-5'>
                 <div className='bg-gray-200 py-5 flex h-full rounded-2xl justify-center items-center'>

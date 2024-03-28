@@ -3,7 +3,7 @@ const BlogNewsCard = ({blog}) => {
     console.log(blog)
 
     const {title,date,categories,type,content,author,location,image} = blog;
-
+  
     return (
         <div className="bg-green-600 rounded-2xl">
                 <a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-green-600">
