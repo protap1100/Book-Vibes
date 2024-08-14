@@ -1,7 +1,7 @@
 const Contact = () => {
     return (
         <div className="mt-10">
-            <div className="bg-gray-200 rounded-xl">
+            <div className="bg-gray-200 rounded-2xl">
                 <h1 className="text-3xl font-bold py-10 text-center">Contact Us From </h1>
             </div>
             <section className="py-6 mt-5 bg-gray-200 dark:text-gray-900 rounded-xl">
@@ -34,7 +34,7 @@ const Contact = () => {
                     <form  className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
                         <label className="block">
                             <span className="mb-1">Full name</span>
-                            <input type="text" placeholder="Your Name" className="block w-full h-10 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 bg-blue-100" />
+                            <input type="text" placeholder="Your Name" className="block w-full h-8 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 bg-blue-100" />
                         </label>
                         <label className="block">
                             <span className="mb-1">Email address</span>
