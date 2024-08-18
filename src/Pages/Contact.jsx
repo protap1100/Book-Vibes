@@ -4,7 +4,7 @@ const Contact = () => {
             <div className="bg-gray-200 rounded-2xl">
                 <h1 className="text-3xl font-bold py-10 text-center">Contact Us From </h1>
             </div>
-            <section className="py-6 mt-5 bg-gray-200 dark:text-gray-900 rounded-xl">
+            <section className="py-6 mt-5 bg-gray-200 dark:text-gray-800 rounded-xl">
                 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                     <div className="py-6 md:py-0 md:px-6">
                         <h1 className="text-4xl font-bold">Get in touch</h1>
